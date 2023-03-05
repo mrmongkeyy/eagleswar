@@ -1,0 +1,67 @@
+[gd_scene load_steps=8 format=2]
+
+[ext_resource path="res://scenes/plane.tscn" type="PackedScene" id=1]
+[ext_resource path="res://assets/background.png" type="Texture" id=2]
+[ext_resource path="res://scenes/main.gd" type="Script" id=3]
+[ext_resource path="res://assets/directionIndicator.png" type="Texture" id=4]
+[ext_resource path="res://scenes/maps.tscn" type="PackedScene" id=5]
+[ext_resource path="res://scenes/uiAnounce.tscn" type="PackedScene" id=6]
+[ext_resource path="res://scenes/moreMenu.tscn" type="PackedScene" id=7]
+
+[node name="smallWorld" type="Node2D"]
+script = ExtResource( 3 )
+
+[node name="Background" type="Sprite" parent="."]
+position = Vector2( 320, 179.5 )
+scale = Vector2( 0.250781, 0.250694 )
+texture = ExtResource( 2 )
+__meta__ = {
+"_edit_lock_": true
+}
+
+[node name="enemies" type="Node2D" parent="."]
+
+[node name="plane" parent="enemies" instance=ExtResource( 1 )]
+position = Vector2( 293, 172 )
+scale = Vector2( 0.01, 0.01 )
+
+[node name="Camera2D" type="Camera2D" parent="enemies/plane"]
+current = true
+zoom = Vector2( 0.3, 0.3 )
+limit_left = 0
+limit_top = 0
+limit_right = 640
+limit_bottom = 360
+
+[node name="particles" type="Node2D" parent="."]
+
+[node name="bullets" type="Node2D" parent="."]
+
+[node name="explodes" type="Node2D" parent="."]
+
+[node name="clouds" type="Node2D" parent="."]
+
+[node name="UI" type="CanvasLayer" parent="."]
+
+[node name="DirectionIndicator" type="Sprite" parent="UI"]
+modulate = Color( 0.188235, 0.188235, 0.188235, 1 )
+position = Vector2( 594, 315 )
+scale = Vector2( 0.1, 0.1 )
+texture = ExtResource( 4 )
+__meta__ = {
+"_edit_lock_": true
+}
+
+[node name="maps" parent="UI" instance=ExtResource( 5 )]
+modulate = Color( 1, 1, 1, 0.498039 )
+position = Vector2( 483, 4 )
+scale = Vector2( 0.24, 0.24 )
+__meta__ = {
+"_edit_lock_": true
+}
+
+[node name="uiAnounce" parent="UI" instance=ExtResource( 6 )]
+
+[node name="moreMenu" parent="UI" instance=ExtResource( 7 )]
+
+[node name="audios" type="Node2D" parent="."]

@@ -1,0 +1,51 @@
+[gd_scene load_steps=6 format=2]
+
+[ext_resource path="res://assets/Franxurter-w11D9.ttf" type="DynamicFontData" id=1]
+[ext_resource path="res://assets/human-skull.png" type="Texture" id=2]
+[ext_resource path="res://assets/plane.png" type="Texture" id=3]
+[ext_resource path="res://assets/pause.png" type="Texture" id=4]
+
+[sub_resource type="DynamicFont" id=1]
+outline_size = 1
+outline_color = Color( 0, 0, 0, 1 )
+font_data = ExtResource( 1 )
+
+[node name="moreMenu" type="CanvasLayer"]
+
+[node name="kill" type="Sprite" parent="."]
+position = Vector2( 106, 24 )
+scale = Vector2( 0.05, 0.05 )
+texture = ExtResource( 2 )
+
+[node name="killlabel" type="Label" parent="."]
+margin_left = 120.0
+margin_top = 13.0
+margin_right = 146.0
+margin_bottom = 34.0
+custom_fonts/font = SubResource( 1 )
+text = "10"
+align = 1
+valign = 1
+
+[node name="planesleft" type="Sprite" parent="."]
+position = Vector2( 24, 24 )
+scale = Vector2( 0.05, 0.05 )
+texture = ExtResource( 3 )
+
+[node name="planeslabel" type="Label" parent="."]
+margin_left = 40.0
+margin_top = 13.0
+margin_right = 70.0
+margin_bottom = 33.0
+custom_fonts/font = SubResource( 1 )
+text = "10"
+align = 1
+valign = 1
+
+[node name="Pause" type="Button" parent="."]
+margin_left = 304.0
+margin_right = 828.0
+margin_bottom = 518.0
+rect_scale = Vector2( 0.08, 0.08 )
+icon = ExtResource( 4 )
+flat = true

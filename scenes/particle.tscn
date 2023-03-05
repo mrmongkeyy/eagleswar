@@ -1,0 +1,13 @@
+[gd_scene load_steps=3 format=2]
+
+[ext_resource path="res://assets/d77c9dm-a7528ebf-1a00-4799-8fc6-bb0d5b63aba8.png" type="Texture" id=1]
+[ext_resource path="res://scenes/particle.gd" type="Script" id=2]
+
+[node name="particle" type="Node2D"]
+script = ExtResource( 2 )
+
+[node name="Sprite" type="Sprite" parent="."]
+scale = Vector2( 0.005, 0.005 )
+texture = ExtResource( 1 )
+region_enabled = true
+region_rect = Rect2( 425.25, 134.25, 67, 62 )
